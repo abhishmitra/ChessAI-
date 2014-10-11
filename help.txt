@@ -1,12 +1,12 @@
 CHESS ENGINE AND AI
-- By Abhishek Mitra and Samyak Prasad
+- By Abhishek Mitra 
 ___________________________________________________________________________________
 
 
 Abstract
 
 This project is an attempt at building a single stage (‘alpha-beta pruning’) chess AI, which does not work using any core machine learning concept. 
-The program is run on a chess engine, which is capable of every sort of chess piece movement developed by Samyak Prasad. 
+The program is run on a chess engine, which is capable of every sort of chess piece movement. 
 
 
 Chess Engine
