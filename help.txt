@@ -5,21 +5,24 @@ ________________________________________________________________________________
 
 Abstract
 
-This project is an attempt at building a single stage (‘alpha-beta pruning’) chess AI, which does not work using any core machine learning concept. 
-The program is run on a chess engine, which is capable of every sort of chess piece movement. 
+This project is an attempt at building a single stage (‘alpha-beta pruning’) chess AI, which does not work using any core 
+machine learning concept. The program is run on a chess engine, which is capable of every sort of chess piece movement. 
 
 
 Chess Engine
 
-The Chess Engine which has been developed, uses conventional chess rules to allow users to play the game. Logic for Castling have not been included due to conflict with the Artificial Intelligence. The possible moves for each piece is generated logically for each piece individually before a turn.
-Once generated, it can be tested to check the legality of the users' inputs. This becomes the important guideline for the AI.
+The Chess Engine which has been developed, uses conventional chess rules to allow users to play the game. Logic for Castling
+have not been included due to conflict with the Artificial Intelligence. The possible moves for each piece is generated 
+logically for each piece individually before a turn. Once generated, it can be tested to check the legality of the users' 
+inputs. This becomes the important guideline for the AI.
 
 
 
 FUNCTIONS
 
 void COMP(int board[8][8]);
--Used for computation for the AI of the chess game. Changes value of global variables which when inputted moves a piece on the chess board.
+-Used for computation for the AI of the chess game. Changes value of global variables which when inputted moves a piece on
+the chess board.
 
 void CHESSBOARD(int board[8][8]);
 -Prints a black and white chess board with red and magenta coloured pieces.
@@ -40,8 +43,8 @@ void main()
 
 AI development
 
-Since there is no machine learning involved in this project, it relies entirely on core valuation of movements of individual pieces.
- We have defined the value of each move as.
+Since there is no machine learning involved in this project, it relies entirely on core valuation of movements of individual 
+pieces.  We have defined the value of each move as.
  
 V(m) = [sig(C) + sig(A) + sig (Ch)] ^ ([It+1] / [Ft+1] ) / ( [63-Ei] / [63-Ef] )
 
@@ -50,16 +53,17 @@ Base Rating = [sig(C) + sig(A) + sig (Ch)]
 
 ‘C’ is defined as Cover value which is the summation of the priority of pieces being covered.
 ‘A‘ is defined as Attack Value which is the summation of the priority of  enemy pieces that are vulnerable to the AI’s pieces.
-‘Ch’ is defined as the summation of Priority of individual pieces times the number of moves each of those pieces are free to commit.
-The power of the function is the most critical part.
+‘Ch’ is defined as the summation of Priority of individual pieces times the number of moves each of those pieces are free to
+commit. The power of the function is the most critical part.
 
 
 
 Power = ([It+1] / [Ft+1]) / ([63-Ei] / [63-Ef])
 
 
-Here, ‘It’ denotes the priority Threat, of all the pieces combined at the beginning of the move. Similarly, ‘Ft’ denotes the priority Threat of all the pieces combined at the end of a move.
-Ei denotes the score of the enemy at the beginning of a move. Ef denotes the enemy score at the end of a move. 
+Here, ‘It’ denotes the priority Threat, of all the pieces combined at the beginning of the move. Similarly, ‘Ft’ denotes the
+priority Threat of all the pieces combined at the end of a move. Ei denotes the score of the enemy at the beginning of a move.
+Ef denotes the enemy score at the end of a move. 
 
 Threat Ratio = ([It+1] / [Ft+1])
 
